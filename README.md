@@ -1,9 +1,9 @@
 
-# Webs para Negocios de Barrio
+# Webs para tu Negocio!
 
-Pago único $40k. Sin cuotas. Foto real + botón a WhatsApp.
+Pago único $40k. Foto real + botón a WhatsApp.
 
-Hago páginas web simples para negocios de barrio que necesitan aparecer en Google y recibir pedidos / turnos por WhatsApp, sin pagar mensualidades.
+Hago páginas web para tus negocios que necesitan aparecer en Google y recibir pedidos / turnos por WhatsApp, sin pagar mensualidades.
 
 ### Demos reales:
 
