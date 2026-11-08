@@ -1,12 +1,30 @@
+
 # Webs para Negocios de Barrio
 
 Pago único $40k. Sin cuotas. Foto real + botón a WhatsApp.
 
-### Demos reales:
--   https://maurigallero.github.io/plantillas_negocios/panaderia/
--   https://maurigallero.github.io/plantillas_negocios/barberia/
--   https://maurigallero.github.io/plantillas_negocios/bandas/
--   https://maurigallero.github.io/plantillas_negocios/Menu_Cafeteria/
+Hago páginas web simples para negocios de barrio que necesitan aparecer en Google y recibir pedidos / turnos por WhatsApp, sin pagar mensualidades.
 
-Incluye: 1 página, hosting gratis, entrega en 24hs.
-Contacto: https://wa.me/5491130497635
+### Demos reales:
+
+- **Panadería:** https://maurigallero.github.io/paginas_web_negocios/panaderia/
+- **Barbería:** https://maurigallero.github.io/paginas_web_negocios/barberia/
+- **Bandas:** https://maurigallero.github.io/paginas_web_negocios/bandas/
+- **Cafetería:** https://maurigallero.github.io/paginas_web_negocios/Menu_Cafeteria/
+
+### ¿Qué incluye por $40k?
+
+- 1 página web lista para usar
+- Foto real de tu negocio
+- Botón directo a WhatsApp
+- Tu nombre, precios, dirección y horarios
+- Hosting gratis (queda publicada en GitHub Pages)
+- Entrega en 24hs
+
+### ¿Cómo pedirla?
+
+1. Elegí una demo que te guste
+2. Mandame por WhatsApp: nombre de tu negocio, precios y 2-3 fotos
+3. En 24hs te mando tu página lista
+
+**Contacto:** https://wa.me/5491130497635
