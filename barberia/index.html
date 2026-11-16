@@ -1,40 +1,168 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RULO - Barbería Clásica</title>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- CAMBIAR: nombre del negocio y rubro -->
+<title>RULO | Barbería en Moreno Centro</title>
+<meta name="description" content="Reservá tu turno por WhatsApp. Atención de lunes a sábado de 10 a 20 hs en Moreno Centro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+/* CAMBIAR: colores y tipografías de cada negocio */
+:root{
+  --bg:#0e0e0e;
+  --surface:#171717;
+  --line:#2a2a2a;
+  --ink:#ede8df;
+  --muted:#a9a498;
+  --accent:#ede8df;
+  --accent-ink:#0e0e0e;
+  --display:"Anton",Impact,sans-serif;
+  --text:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0E0E0E;color:#EDE8DF;font-family:'Inter',sans-serif}
-h1,h2{font-family:'Anton',sans-serif;text-transform:uppercase;letter-spacing:0.02em}
-.wrap{max-width:1200px;margin:0 auto;padding:24px}
-.nav{display:flex;justify-content:space-between;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;opacity:0.6}
-.hero{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;align-items:end}
-.hero h1{font-size:92px;line-height:0.9}
-.hero-img{height:72vh;min-height:500px;background:url('BARBER.jpg') center/cover;border-radius:4px;filter:grayscale(0.1)}
-.btn{background:#EDE8DF;color:#0E0E0E;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:600;display:inline-block;margin-top:20px;font-size:14px}
-.prices{margin-top:56px;border-top:1px solid #222;padding-top:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.prices div{border-left:1px solid #222;padding-left:16px}
-.prices b{display:block;font-family:'Anton';font-size:20px}
-@media(max-width:800px){.hero{grid-template-columns:1fr}.hero h1{font-size:56px}.hero-img{height:50vh}.prices{grid-template-columns:1fr 1fr}}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--text);line-height:1.6;overflow-x:hidden}
+h1,h2{font-family:var(--display);font-weight:400;line-height:1.02;letter-spacing:.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:15px 28px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none}
+.btn:hover{filter:brightness(.9)}
+.btn-line{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn-line:hover{background:rgba(237,232,223,.1);filter:none}
+
+/* Menú */
+.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.brand{font-family:var(--display);font-size:24px;text-decoration:none}
+.top .btn{padding:10px 20px;font-size:14px}
+
+/* Inicio */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding:32px 0 72px}
+.hero h1{font-size:clamp(44px,7vw,84px)}
+.hero p.sub{margin-top:20px;font-size:18px;color:var(--muted);max-width:40ch}
+.hero .actions{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.hero .meta{margin-top:28px;color:var(--muted);font-size:15px;line-height:1.7}
+.hero .meta strong{color:var(--ink);font-weight:600}
+.hero img{width:100%;height:min(66vh,560px);min-height:360px;object-fit:cover;border-radius:12px;display:block;background:var(--surface)}
+
+/* Secciones */
+section.block{padding:72px 0 0}
+section.block h2{font-size:clamp(32px,5vw,46px);margin-bottom:10px}
+.lead{color:var(--muted);max-width:52ch}
+
+/* Precios */
+.list{margin-top:28px;border-top:1px solid var(--line)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.row span{font-size:18px;font-weight:500}
+.row small{display:block;color:var(--muted);font-size:14px;font-weight:400}
+.row b{font-family:var(--display);font-weight:400;font-size:26px;white-space:nowrap}
+
+/* Pasos */
+.steps{margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px}
+.steps li::before{content:counter(s);display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-weight:700;align-items:center;justify-content:center;margin-bottom:14px}
+.steps h3{font-size:18px;font-weight:600}
+.steps p{margin-top:4px;color:var(--muted);font-size:15px}
+
+/* Ubicación */
+.where{margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.where div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px}
+.where h3{font-size:16px;font-weight:600}
+.where p{margin-top:4px;color:var(--muted)}
+
+/* Cierre */
+.final{margin-top:72px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:48px 32px;text-align:center}
+.final h2{font-size:clamp(30px,5vw,44px)}
+.final p{margin:10px auto 24px;color:var(--muted);max-width:44ch}
+
+footer{margin-top:72px;padding:24px 0 96px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+
+/* Botón fijo de reserva */
+.float{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:20;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+
+@media (max-width:800px){
+  .hero{grid-template-columns:1fr;gap:28px;padding-bottom:48px}
+  .hero img{height:46vh;min-height:280px;order:-1}
+  .row b{font-size:22px}
+}
+@media (max-width:560px){
+  .hero .actions .btn{width:100%;text-align:center}
+  .float{left:20px;text-align:center}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="nav"><span>RULO — Moreno Centro</span><span>Lun a Sáb 10-20hs</span></div>
-  <div class="hero">
-    <div><h1>CORTE<br>CLÁSICO<br>Y BARBA.</h1><p style="margin-top:16px;opacity:0.7;max-width:340px">Tijera, navaja y charla. Reservá tu turno por WhatsApp.</p><a class="btn" href="https://wa.me/5491130497635?text=Hola%20Rulo,%20quiero%20un%20turno">Reservar turno →</a></div>
-    <div class="hero-img"></div> 
-    </div>
- 
 
-  <div class="prices">
-    <div><b>$8.000</b>Corte</div>
-    <div><b>$12.000</b>Corte + Barba</div>
-    <div><b>$5.000</b>Barba</div>
-    <div><b>$6.000</b>Niños</div>
-  </div>
+  <header class="top">
+    <!-- CAMBIAR: nombre del negocio -->
+    <a class="brand" href="#">RULO</a>
+    <a class="btn" href="https://wa.me/5491130497635?text=Hola%20Rulo,%20quiero%20un%20turno">Reservar</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <!-- CAMBIAR: titular. Ej: "Tu mejor corte, sin esperas" / "Color y cuidado para tu pelo" / "Tatuajes a tu medida" -->
+        <h1>Corte clásico y barba, con turno asegurado</h1>
+        <p class="sub">Tijera, navaja y charla. Reservá por WhatsApp y te confirmamos al instante.</p>
+        <div class="actions">
+          <a class="btn" href="https://wa.me/5491130497635?text=Hola%20Rulo,%20quiero%20un%20turno">Reservar turno</a>
+          <a class="btn btn-line" href="#precios">Ver precios</a>
+        </div>
+        <p class="meta"><strong>Lunes a sábado de 10 a 20 hs</strong><br>Moreno Centro</p>
+      </div>
+      <!-- CAMBIAR: foto del local o de tus trabajos -->
+      <img src="BARBER.jpg" alt="Foto del local">
+    </section>
+
+    <section class="block" id="precios">
+      <h2>Servicios y precios</h2>
+      <p class="lead">Precios claros, sin sorpresas.</p>
+      <!-- CAMBIAR: servicios y precios -->
+      <div class="list">
+        <div class="row"><span>Corte</span><b>$8.000</b></div>
+        <div class="row"><span>Corte + Barba<small>El más elegido</small></span><b>$12.000</b></div>
+        <div class="row"><span>Barba</span><b>$5.000</b></div>
+        <div class="row"><span>Niños</span><b>$6.000</b></div>
+      </div>
+    </section>
+
+    <section class="block" id="turnos">
+      <h2>Cómo reservar</h2>
+      <p class="lead">Menos de un minuto y sin llamadas.</p>
+      <ol class="steps">
+        <li><h3>Escribinos por WhatsApp</h3><p>Tocá el botón y contanos qué servicio querés.</p></li>
+        <li><h3>Elegí día y horario</h3><p>Te mostramos los turnos libres y reservamos el tuyo.</p></li>
+        <li><h3>Vení a tu turno</h3><p>Te esperamos a la hora acordada, sin demoras.</p></li>
+      </ol>
+    </section>
+
+    <section class="block" id="donde">
+      <h2>Dónde estamos</h2>
+      <!-- CAMBIAR: dirección y horarios -->
+      <div class="where">
+        <div><h3>Dirección</h3><p>Moreno Centro</p></div>
+        <div><h3>Horarios</h3><p>Lunes a sábado de 10 a 20 hs</p></div>
+      </div>
+    </section>
+
+    <section class="final">
+      <h2>Reservá tu turno hoy</h2>
+      <p>Escribinos y te confirmamos el horario en el momento.</p>
+      <a class="btn" href="https://wa.me/5491130497635?text=Hola%20Rulo,%20quiero%20un%20turno">Reservar por WhatsApp</a>
+    </section>
+  </main>
+
+  <footer>© RULO. Moreno Centro.</footer>
 </div>
+
+<a class="btn float" href="https://wa.me/5491130497635?text=Hola%20Rulo,%20quiero%20un%20turno" aria-label="Reservar turno por WhatsApp">Reservar por WhatsApp</a>
+
 </body>
 </html>
