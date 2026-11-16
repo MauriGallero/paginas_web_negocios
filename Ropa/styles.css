@@ -122,3 +122,37 @@ legend{font-size:14px;font-weight:500;margin-bottom:6px}
   .pdp-img{aspect-ratio:1/1}
   .pdp-info{padding:24px 20px}
 }
+
+/* ===== COLOR ===== */
+:root{
+  --bg:#fbfaff;
+  --ink:#14102b;
+  --muted:#6a6585;
+  --line:#ddd7f3;
+  --soft:#efebff;
+  --brand:#5b2bff;
+  --accent:#d4ff00;
+}
+:focus-visible{outline-color:var(--brand)}
+.aviso{background:var(--brand)}
+.top{background:rgba(251,250,255,.96)}
+
+/* Foto del inicio con un velo violeta */
+.hero{background-color:var(--brand);position:relative;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(135deg,rgba(91,43,255,.6),rgba(20,16,43,0) 70%);mix-blend-mode:multiply}
+
+.btn-main{background:var(--brand);border-color:var(--brand)}
+.cart-btn{border-color:var(--brand);color:var(--brand)}
+.cart-btn:hover{background:var(--brand);color:#fff}
+.cart-btn span{background:var(--brand)}
+.chip{border-color:var(--brand);color:var(--brand)}
+.chip:hover{background:var(--soft)}
+.chip.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.card:hover .ph{border-color:var(--brand)}
+.pr,.pdp-price,.totals .total{color:var(--brand)}
+.opt{border-color:var(--brand)}
+.opt.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.x,.qty button{border-color:var(--brand)}
+.x:hover,.qty button:hover,.close:hover{background:var(--brand);color:#fff}
+.drawer{border-left-color:var(--brand)}
+.foot{border-top-color:var(--brand)}
