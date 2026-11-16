@@ -1,6 +1,8 @@
 window.SITE = {
   name: "Nombre del restaurante",
   tagline: "Cocina casera, pedí en un minuto y retirá o recibí en tu casa.",
+    heroImg: "img/hamburguesa.jpg",
+  heroAlt: "Hamburguesa con crema de trufa y pan brioche, sostenida con las dos manos",
 
   // Número con código de país, sin + ni espacios
   whatsapp: "5491130497635",
