@@ -88,3 +88,24 @@ legend{font-size:14px;font-weight:500;margin-bottom:6px}
   .actions .btn{width:100%;text-align:center}
   .dish img{width:80px;height:80px}
 }
+
+/* ===== COLOR ===== */
+:root{
+  --bg:#f3f7f1;
+  --ink:#10231b;
+  --muted:#5a6b62;
+  --line:#dde6dc;
+  --accent:#f2541b;
+  --forest:#0f3d2e;
+}
+.hero{background:var(--forest)}
+.hero #tagline{color:#cfe3d8}
+.hero .info{color:#9fc0af}
+.bar{background:rgba(243,247,241,.95)}
+.chips a:hover{background:var(--forest);border-color:var(--forest);color:#fff}
+.cat h2{color:var(--forest)}
+.price{color:var(--forest)}
+.btn-add{background:var(--forest)}
+.btn-main,.cart-btn{background:var(--accent)}
+.totals .total{color:var(--forest)}
+.foot strong{color:var(--forest)}
