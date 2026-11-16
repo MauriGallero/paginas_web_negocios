@@ -16,7 +16,7 @@ window.SITE = {
 
   products: [
     { id: "r1", cat: "Remeras", name: "Remera oversize", price: 18000, tag: "Nuevo",
-      img: "img/overBlanca.jpg", img2: "img/overNegra.jpg",
+      img: "img/overNegra.jpg", img2: "img/overBlanca.jpg",
       desc: "Algodón peinado de 220 g. Calce amplio.",
       sizes: ["S", "M", "L", "XL"], colors: ["Negro", "Blanco"] },
     { id: "r2", cat: "Remeras", name: "Remera gráfica", price: 16500,
