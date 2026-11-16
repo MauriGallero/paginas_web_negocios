@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Restaurante</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1 id="name"></h1>
+    <p id="tagline"></p>
+    <div class="actions">
+      <a class="btn btn-light" href="#menu">Ver la carta</a>
+      <a class="btn btn-line" id="pedidosya" target="_blank" rel="noopener" hidden>Pedir por PedidosYa</a>
+    </div>
+    <p class="info" id="info"></p>
+  </div>
+</header>
+
+<nav class="bar" aria-label="Categorías">
+  <div class="wrap bar-in">
+    <div class="chips" id="chips"></div>
+    <button class="cart-btn" id="open-cart" type="button">Pedido <span id="count">0</span></button>
+  </div>
+</nav>
+
+<main class="wrap" id="menu"></main>
+
+<footer class="wrap foot" id="foot"></footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-label="Tu pedido" aria-hidden="true">
+  <div class="drawer-head">
+    <h2>Tu pedido</h2>
+    <button type="button" class="close" id="close-cart" aria-label="Cerrar">✕</button>
+  </div>
+  <div class="drawer-body">
+    <div id="lines"></div>
+    <div id="checkout" hidden>
+      <label>Tu nombre<input id="f-name" autocomplete="name"></label>
+      <fieldset>
+        <legend>Cómo lo querés</legend>
+        <label class="radio"><input type="radio" name="mode" value="retiro" checked> Retiro en el local</label>
+        <label class="radio"><input type="radio" name="mode" value="envio"> Envío a domicilio</label>
+      </fieldset>
+      <label id="addr-wrap" hidden>Dirección de entrega<input id="f-addr" autocomplete="street-address"></label>
+      <label>Aclaraciones (opcional)<textarea id="f-note" rows="2"></textarea></label>
+    </div>
+  </div>
+  <div class="drawer-foot">
+    <div class="totals" id="totals"></div>
+    <p class="err" id="err" role="alert"></p>
+    <button type="button" class="btn btn-main" id="send" disabled>Enviar pedido por WhatsApp</button>
+  </div>
+</aside>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
