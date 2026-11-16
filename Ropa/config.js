@@ -5,18 +5,15 @@ window.SITE = {
   // Usá \n para cortar el título en dos líneas
   heroTitle: "Nueva\ncolección",
   heroSub: "Prendas pensadas para destacar. Elegí tu talle y pedí por WhatsApp.",
-  heroImg: "img/tienda.jpg",          // foto horizontal, mínimo 1600 px de ancho
+  heroImg: "img/tienda.jpg",
 
-  whatsapp: "5491130497635",        // con código de país, sin + ni espacios
+  whatsapp: "5491130497635",
   direccion: "Tu dirección, Moreno",
   horarios: "Lunes a sábado de 10 a 20 hs",
   pagos: "Transferencia, efectivo o Mercado Pago. Lo coordinamos por WhatsApp.",
-  envio: 4500,                      // costo de envío. Poné 0 si es gratis
-  envioGratisDesde: 60000,          // monto para envío gratis. Poné 0 para desactivar
+  envio: 4500,
+  envioGratisDesde: 60000,
 
-  // Cada prenda necesita un "id" único.
-  // img e img2 son opcionales (img2 aparece al pasar el mouse).
-  // priceOld y tag son opcionales. Sin sizes o colors, no se pide elegir.
   products: [
     { id: "r1", cat: "Remeras", name: "Remera oversize", price: 18000, tag: "Nuevo",
       img: "img/overBlanca.jpg", img2: "img/overNegra.jpg",
@@ -26,16 +23,19 @@ window.SITE = {
       img: "img/grafica.jpg", desc: "Estampa en serigrafía.",
       sizes: ["S", "M", "L"], colors: ["Negro"] },
     { id: "p1", cat: "Pantalones", name: "Cargo wide", price: 42000, priceOld: 48000,
-      img: "img/cargoVerde.jpg", img2:"img/cargoNegro.jpg" desc: "Corte amplio, seis bolsillos y tela resistente.",
+      img: "img/cargoVerde.jpg", img2: "img/cargoNegro.jpg",
+      desc: "Corte amplio, seis bolsillos y tela resistente.",
       sizes: ["38", "40", "42", "44"], colors: ["Verde", "Negro"] },
     { id: "p2", cat: "Pantalones", name: "Jean recto", price: 39000,
       img: "img/Jean.jpg", desc: "Denim rígido, tiro medio.",
       sizes: ["38", "40", "42", "44"], colors: ["Azul"] },
     { id: "c1", cat: "Abrigos", name: "Campera bomber", price: 68000, tag: "Nuevo",
-      img: "img/bomber-negra.jpg", img2: "img/bomber-beige.jpg" desc: "Forro interno y puños elásticos.",
+      img: "img/bomber-negra.jpg", img2: "img/bomber-beige.jpg",
+      desc: "Forro interno y puños elásticos.",
       sizes: ["S", "M", "L"], colors: ["Negro", "Beige"] },
     { id: "a1", cat: "Accesorios", name: "Gorra dad hat", price: 9500,
-      img: "img/dadHat-Negra.jpg", img2: "img/dadHat-Blanca.jpg" desc: "Visera curva, ajuste trasero.",
+      img: "img/dadHat-Negra.jpg", img2: "img/dadHat-Blanca.jpg",
+      desc: "Visera curva, ajuste trasero.",
       colors: ["Negro", "Blanco"] }
   ]
 };
