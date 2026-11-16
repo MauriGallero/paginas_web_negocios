@@ -3,54 +3,105 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>La Web para tu negocio - Mauri</title>
+<title>Webs para negocios | Mauri</title>
+<meta name="description" content="Páginas web simples y profesionales para negocios: tu local, tus productos y un botón directo a tu WhatsApp. Lista en 24 hs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,sans-serif}
-body{background:#0a0a0a;color:#fff;padding:20px}
-header{text-align:center;padding:40px 20px}
-header h1{font-size:32px;line-height:1.1}
-header h1 span{color:#25D366}
-header p{opacity:0.7;margin-top:12px;font-size:18px}
-.grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;padding:20px}
-.card{background:#1a1a1a;border-radius:20px;overflow:hidden;border:1px solid #2a2a2a;text-decoration:none;color:#fff;display:block}
-.card img{width:100%;height:180px;object-fit:cover}
-.card div{padding:18px}
-.card h3{font-size:20px}
-.card p{opacity:0.6;margin-top:6px;font-size:14px}
-.card:hover{border-color:#25D366;transform:translateY(-3px);transition:0.2s}
-.cta{text-align:center;margin:50px 0}
-.btn{background:#25D366;color:#000;padding:18px 32px;border-radius:100px;font-weight:900;text-decoration:none;display:inline-block;font-size:18px}
+/* Para reutilizar la página con otra marca, cambiá solo estas variables */
+:root{
+  --bg:#f6f7f9;
+  --surface:#ffffff;
+  --ink:#14171f;
+  --muted:#5b6270;
+  --line:#e2e5ea;
+  --accent:#0f6b5c;
+  --accent-ink:#ffffff;
+  --font:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+.top{display:flex;justify-content:space-between;align-items:center;padding:28px 0}
+.brand{font-weight:800;font-size:18px;letter-spacing:-.01em}
+.top a{color:var(--muted);font-size:15px;font-weight:500;text-decoration:none}
+.top a:hover{color:var(--ink)}
+
+.hero{padding:56px 0 48px;max-width:720px}
+.hero h1{font-size:clamp(34px,6vw,56px);line-height:1.08;letter-spacing:-.03em;font-weight:800}
+.hero p{margin-top:20px;font-size:18px;color:var(--muted);max-width:56ch}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;padding-bottom:72px}
+.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;color:inherit;text-decoration:none}
+.card img{width:100%;height:170px;object-fit:cover;display:block;background:var(--line)}
+.card .body{padding:18px 20px 22px}
+.card h3{font-size:18px;font-weight:700;letter-spacing:-.01em}
+.card p{margin-top:6px;font-size:15px;color:var(--muted)}
+.card:hover{border-color:var(--accent)}
+.card:focus-visible,.btn:focus-visible,.top a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+.offer{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:36px;display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between;margin-bottom:72px}
+.offer .price{font-size:40px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.offer .detail{margin-top:10px;color:var(--muted);font-size:15px}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:16px 28px;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none}
+.btn:hover{filter:brightness(1.1)}
+
+footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:14px}
+
+@media (max-width:560px){
+  .offer{padding:26px}
+  .btn{width:100%;text-align:center}
+}
 </style>
 </head>
 <body>
-<header>
-<h1> Web moderna y a tu gusto, para <span>atraer clientes</span><br> a tu espacio</h1>
-<p>Foto real de tu local + botón a tu WhatsApp o tus redes, tambien carrito de compras y todo lo que tus necesidades soliciten</p>
+<div class="wrap">
+
+<header class="top">
+  <span class="brand">Mauri</span>
+  <a href="#contacto">Contacto</a>
 </header>
 
-<div class="grid">
-<a class="card" href="./panaderia/">
-<img src="./panaderia/PAN.jpg" onerror="this.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600'">
-<div><h3>🍞 Panadería-Almacen-Kiosco</h3><p>Ideal para panaderías, kioscos, almacenes</p></div>
-</a>
+<section class="hero">
+  <h1>Una web moderna para que tus clientes te encuentren y te escriban</h1>
+  <p>Con fotos reales de tu local, un botón directo a tu WhatsApp o redes, carrito de compras si lo necesitás y todo lo que tu negocio requiera.</p>
+</section>
 
-<a class="card" href="./barberia/">
-<img src="./barberia/BARBER.jpg" onerror="this.src='https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600'">
-<div><h3>💈 Barbería-Peluqueria-Salon de Belleza-Tatuajes</h3><p>Ideal para barberos, peluquerías, tatuadores</p></div>
-</a>
+<section class="grid" aria-label="Plantillas disponibles">
+  <a class="card" href="./panaderia/">
+    <img src="./panaderia/PAN.jpg" alt="Plantilla para panadería, almacén y kiosco" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600'">
+    <div class="body"><h3>Panadería, almacén y kiosco</h3><p>Para panaderías, kioscos y almacenes.</p></div>
+  </a>
 
-<a class="card" href="./bandas/">
-<img src="./bandas/BANDA.jpg" onerror="this.src='https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600'">
-<div><h3>🎸 Bandas - Cualquier estilo</h3><p>Ideal para bandas, DJs, artistas, eventos</p></div>
-</a>
-<a class="card" href="./Menu_Cafeteria/">
-  <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg">
-  <div><h3> Menu Cafeteria</h3><p>Editable, tu logo, tu nombre, tus precios</p></div>
-</div>
+  <a class="card" href="./barberia/">
+    <img src="./barberia/BARBER.jpg" alt="Plantilla para barbería, peluquería y tatuajes" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600'">
+    <div class="body"><h3>Barbería, peluquería y tatuajes</h3><p>Para barberos, peluquerías, salones de belleza y tatuadores.</p></div>
+  </a>
 
-<div class="cta">
-<p style="margin-bottom:15px;opacity:0.8"><br>OFERTA 40.000$</br> Lista en 24hs. Dominio propio opcional.</p>
-<a class="btn" href="https://wa.me/5491130497635?text=Hola%20Mauri%20vi%20tu%20portfolio%20de%20plantillas%20y%20quiero%20una%20para%20mi%20negocio">QUIERO MI WEB POR WHATSAPP</a>
+  <a class="card" href="./bandas/">
+    <img src="./bandas/BANDA.jpg" alt="Plantilla para bandas y artistas" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600'">
+    <div class="body"><h3>Bandas y artistas</h3><p>Para bandas de cualquier estilo, DJs y eventos.</p></div>
+  </a>
+
+  <a class="card" href="./Menu_Cafeteria/">
+    <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg" alt="Plantilla de menú para cafetería" loading="lazy">
+    <div class="body"><h3>Menú de cafetería</h3><p>Editable: tu logo, tu nombre y tus precios.</p></div>
+  </a>
+</section>
+
+<section class="offer" id="contacto">
+  <div>
+    <div class="price">$40.000</div>
+    <p class="detail">Lista en 24 hs. Dominio propio opcional.</p>
+  </div>
+  <a class="btn" href="https://wa.me/5491130497635?text=Hola%20Mauri%20vi%20tu%20portfolio%20de%20plantillas%20y%20quiero%20una%20para%20mi%20negocio">Pedir mi web por WhatsApp</a>
+</section>
+
+<footer>© Mauri. Webs para negocios.</footer>
+
 </div>
 </body>
 </html>
