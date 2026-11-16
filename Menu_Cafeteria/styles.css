@@ -1,99 +1,157 @@
+/* CAMBIAR: colores y tipografías de cada local */
+:root {
+  --bg: #f7f2ea;
+  --surface: #fffdf9;
+  --line: #e6dccb;
+  --ink: #2a1b12;
+  --muted: #7a6a5c;
+  --accent: #8b4513;
+  --display: "Instrument Serif", Georgia, serif;
+  --text: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
-  font-family: 'Segoe UI', sans-serif;
-  padding: 20px;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  background-color: burlywood;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--text);
+  line-height: 1.5;
+  padding: 24px 16px 48px;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1 {
-  text-align: center;
-  font-size: 42px;
-  margin-top: 0;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-}
-
-h2 {
-  text-align: center;
-  font-size: 32px;
-  margin-top: 25px;
-}
-
-.established {
-  text-align: center;
-  font-style: italic;
-  color: #555;
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .menu {
-  width: 100%;
-  max-width: 500px;
-  background-color: burlywood;
-  margin: 40px auto;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  max-width: 560px;
+  margin: 24px auto 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 48px 36px 36px;
 }
 
-img {
-  display: block;
-  margin: -15px auto 20px auto;
-  width: 50px;
+/* Encabezado */
+.head {
+  text-align: center;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
 }
 
-hr {
-  height: 2px;
-  background-color: #8B4513;
-  border: none;
-  opacity: 0.3;
+h1 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(40px, 9vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.01em;
 }
 
-.bottom-line {
-  margin-top: 30px;
+.established {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* Categorías */
+section {
+  padding-top: 36px;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+h2 img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+/* Productos */
+.items {
+  list-style: none;
 }
 
 .item {
   display: flex;
-  justify-content: space-between;
-  margin: 8px 0;
-  font-size: 18px;
+  align-items: baseline;
+  gap: 10px;
+  padding: 9px 0;
+  font-size: 17px;
 }
 
-.flavor, .dessert {
-  text-align: left;
-  width: 75%;
+.name {
+  font-weight: 500;
+}
+
+.dots {
+  flex: 1;
+  border-bottom: 1px dotted var(--line);
+  transform: translateY(-4px);
+  min-width: 16px;
 }
 
 .price {
-  text-align: right;
-  width: 25%;
-  font-weight: bold;
-  color: #5a2e0c;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
 }
 
-footer {
+/* Opcional, para la versión restaurante: una línea de descripción debajo del nombre */
+.desc {
+  color: var(--muted);
   font-size: 14px;
-  text-align: center;
-  margin-top: 20px;
+  font-weight: 400;
 }
 
-.address {
-  margin-top: 5px;
+/* Pie */
+footer {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+address {
+  font-style: normal;
 }
 
 footer a {
+  color: var(--accent);
+  font-weight: 600;
   text-decoration: none;
-  color: #8B4513;
-  font-weight: bold;
 }
 
 footer a:hover {
-  color: #b35d1a;
+  text-decoration: underline;
+}
+
+.address {
+  margin-top: 4px;
+}
+
+@media (max-width: 480px) {
+  .menu {
+    padding: 36px 22px 28px;
+  }
+  .item {
+    font-size: 16px;
+  }
 }
