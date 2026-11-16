@@ -1,63 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menú - Plantilla Café</title>
-    <link href="styles.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div class="menu">
-      <main>
-        <h1>NOMBRE DE TU CAFÉ</h1>
-        <p class="established">Desde 2020</p>
-        <hr>
-        <section>
-          <h2>Cafés</h2>
-          <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg" alt="icono de café"/>
-          <article class="item">
-            <p class="flavor">Espresso</p><p class="price">$2.500</p>
-          </article>
-          <article class="item">
-            <p class="flavor">Latte Vainilla</p><p class="price">$3.200</p>
-          </article>
-          <article class="item">
-            <p class="flavor">Capuchino</p><p class="price">$3.000</p>
-          </article>
-          <article class="item">
-            <p class="flavor">Mocca</p><p class="price">$3.500</p>
-          </article>
-          <article class="item">
-            <p class="flavor">Caramel Macchiato</p><p class="price">$3.800</p>
-          </article>
-        </section>
-        <section>
-          <h2>Postres</h2>
-          <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg" alt="icono de postre"/>
-          <article class="item">
-            <p class="dessert">Medialuna</p><p class="price">$1.200</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Tostado</p><p class="price">$3.500</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Porción de Torta</p><p class="price">$4.000</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cookie</p><p class="price">$1.800</p>
-          </article>
-        </section>
-      </main>
-      <hr class="bottom-line">
-      <footer>
-        <address>
-          <p>
-            <a href="#" target="_blank">Seguinos en Instagram</a>
-          </p>
-          <p class="address">Tu Dirección, ABC - Buenos Aires</p>
-          
-        </address>
-      </footer>
-    </div>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- CAMBIAR: nombre del local -->
+  <title>Menú | Nombre de tu café</title>
+  <meta name="description" content="Carta de cafés y postres con precios actualizados.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="menu">
+
+    <header class="head">
+      <!-- CAMBIAR: nombre y año -->
+      <h1>Nombre de tu café</h1>
+      <p class="established">Desde 2020</p>
+    </header>
+
+    <main>
+      <!-- Para agregar una categoría, copiá una <section> completa -->
+      <section>
+        <h2>
+          <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg" alt="">
+          Cafés
+        </h2>
+        <ul class="items">
+          <li class="item"><span class="name">Espresso</span><span class="dots" aria-hidden="true"></span><span class="price">$2.500</span></li>
+          <li class="item"><span class="name">Latte Vainilla</span><span class="dots" aria-hidden="true"></span><span class="price">$3.200</span></li>
+          <li class="item"><span class="name">Capuchino</span><span class="dots" aria-hidden="true"></span><span class="price">$3.000</span></li>
+          <li class="item"><span class="name">Mocca</span><span class="dots" aria-hidden="true"></span><span class="price">$3.500</span></li>
+          <li class="item"><span class="name">Caramel Macchiato</span><span class="dots" aria-hidden="true"></span><span class="price">$3.800</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>
+          <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg" alt="">
+          Postres
+        </h2>
+        <ul class="items">
+          <li class="item"><span class="name">Medialuna</span><span class="dots" aria-hidden="true"></span><span class="price">$1.200</span></li>
+          <li class="item"><span class="name">Tostado</span><span class="dots" aria-hidden="true"></span><span class="price">$3.500</span></li>
+          <li class="item"><span class="name">Porción de torta</span><span class="dots" aria-hidden="true"></span><span class="price">$4.000</span></li>
+          <li class="item"><span class="name">Cookie</span><span class="dots" aria-hidden="true"></span><span class="price">$1.800</span></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <address>
+        <!-- CAMBIAR: link de Instagram y dirección -->
+        <p><a href="#" target="_blank" rel="noopener">Seguinos en Instagram</a></p>
+        <p class="address">Tu Dirección, ABC - Buenos Aires</p>
+      </address>
+    </footer>
+
+  </div>
+</body>
 </html>
