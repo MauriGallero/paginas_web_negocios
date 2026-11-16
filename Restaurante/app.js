@@ -20,6 +20,13 @@
   document.title = S.name + " | Carta y pedidos";
   $("#name").textContent = S.name;
   $("#tagline").textContent = S.tagline;
+    if (S.heroImg) {
+    var hi = $("#hero-img");
+    hi.src = S.heroImg;
+    hi.alt = S.heroAlt || "";
+    hi.hidden = false;
+    $(".hero-grid").classList.add("with-img");
+  }
   $("#info").textContent = S.horarios + ". " + S.direccion;
   if (S.pedidosYa) { var py = $("#pedidosya"); py.href = S.pedidosYa; py.hidden = false; }
   $("#foot").innerHTML = "<p><strong>" + esc(S.name) + "</strong></p><p>" + esc(S.direccion) +
