@@ -5,7 +5,7 @@ window.SITE = {
   // Usá \n para cortar el título en dos líneas
   heroTitle: "Nueva\ncolección",
   heroSub: "Prendas pensadas para destacar. Elegí tu talle y pedí por WhatsApp.",
-  heroImg: "img/hero.jpg",          // foto horizontal, mínimo 1600 px de ancho
+  heroImg: "img/tienda.jpg",          // foto horizontal, mínimo 1600 px de ancho
 
   whatsapp: "5491130497635",        // con código de país, sin + ni espacios
   direccion: "Tu dirección, Moreno",
@@ -19,23 +19,23 @@ window.SITE = {
   // priceOld y tag son opcionales. Sin sizes o colors, no se pide elegir.
   products: [
     { id: "r1", cat: "Remeras", name: "Remera oversize", price: 18000, tag: "Nuevo",
-      img: "img/remera1.jpg", img2: "img/remera1b.jpg",
+      img: "img/overBlanca.jpg", img2: "img/overNegra.jpg",
       desc: "Algodón peinado de 220 g. Calce amplio.",
       sizes: ["S", "M", "L", "XL"], colors: ["Negro", "Blanco"] },
     { id: "r2", cat: "Remeras", name: "Remera gráfica", price: 16500,
-      img: "img/remera2.jpg", desc: "Estampa en serigrafía.",
+      img: "img/grafica.jpg", desc: "Estampa en serigrafía.",
       sizes: ["S", "M", "L"], colors: ["Negro"] },
     { id: "p1", cat: "Pantalones", name: "Cargo wide", price: 42000, priceOld: 48000,
-      img: "img/cargo1.jpg", desc: "Corte amplio, seis bolsillos y tela resistente.",
+      img: "img/cargoVerde.jpg", img2:"img/cargoNegro.jpg" desc: "Corte amplio, seis bolsillos y tela resistente.",
       sizes: ["38", "40", "42", "44"], colors: ["Verde", "Negro"] },
     { id: "p2", cat: "Pantalones", name: "Jean recto", price: 39000,
-      img: "img/jean1.jpg", desc: "Denim rígido, tiro medio.",
+      img: "img/Jean.jpg", desc: "Denim rígido, tiro medio.",
       sizes: ["38", "40", "42", "44"], colors: ["Azul"] },
     { id: "c1", cat: "Abrigos", name: "Campera bomber", price: 68000, tag: "Nuevo",
-      img: "img/bomber1.jpg", desc: "Forro interno y puños elásticos.",
+      img: "img/bomber-negra.jpg", img2: "img/bomber-beige.jpg" desc: "Forro interno y puños elásticos.",
       sizes: ["S", "M", "L"], colors: ["Negro", "Beige"] },
     { id: "a1", cat: "Accesorios", name: "Gorra dad hat", price: 9500,
-      img: "img/gorra1.jpg", desc: "Visera curva, ajuste trasero.",
+      img: "img/dadHat-Negra.jpg", img2: "img/dadHat-Blanca.jpg" desc: "Visera curva, ajuste trasero.",
       colors: ["Negro", "Blanco"] }
   ]
 };
