@@ -7,6 +7,7 @@ Hago páginas web para tus negocios que necesitan aparecer en Google y recibir p
 
 ### Demos reales:
 
+- **Tienda de Ropa:** https://maurigallero.github.io/paginas_web_negocios/Ropa/
 - **Restaurante:** https://maurigallero.github.io/paginas_web_negocios/Restaurante/
 - **Panadería:** https://maurigallero.github.io/paginas_web_negocios/panaderia/
 - **Barbería:** https://maurigallero.github.io/paginas_web_negocios/barberia/
