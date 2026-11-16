@@ -5,6 +5,7 @@
   --text:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 body{background:var(--bg);color:var(--ink);font-family:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased}
