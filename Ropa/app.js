@@ -22,26 +22,8 @@
   $("#h-title").innerHTML = esc(S.heroTitle).replace(/\n/g, "<br>");
   $("#h-sub").textContent = S.heroSub;
   if (S.heroImg) {
-    var hero = $("#hero");
-    hero.style.backgroundImage = 'linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,.12)),url("' + S.heroImg + '")';
-    // FIX HERO: que no se corte ni se desborde
-    hero.style.backgroundSize = "cover";
-    hero.style.backgroundPosition = "center center";
-    hero.style.backgroundRepeat = "no-repeat";
-    hero.style.overflow = "hidden";
-    hero.style.width = "100%";
-    hero.style.maxWidth = "100%";
-    hero.style.boxSizing = "border-box";
+    $("#hero").style.backgroundImage = 'linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,.12)),url("' + S.heroImg + '")';
   }
-  // FIX TITULO: que "colección" no se corte en celu
-  var hTitle = $("#h-title");
-  hTitle.style.whiteSpace = "pre-line";
-  hTitle.style.overflowWrap = "break-word";
-  hTitle.style.wordBreak = "break-word";
-  hTitle.style.maxWidth = "100%";
-  document.documentElement.style.overflowX = "hidden";
-  document.body.style.overflowX = "hidden";
-
   $("#foot").innerHTML = "<p><strong>" + esc(S.name) + "</strong></p><p>" + esc(S.direccion) +
     "</p><p>" + esc(S.horarios) + "</p><p>" + esc(S.pagos) + "</p>";
 
@@ -71,10 +53,9 @@
       return '<button type="button" class="opt' + (v === sel ? " on" : "") + '" data-' + type + '="' + esc(v) + '" aria-pressed="' + (v === sel) + '">' + esc(v) + "</button>";
     }).join("");
   }
-  // FIX COLORES: devuelve la foto que corresponde al color elegido
-  // Color 0 = img, Color 1 = img2
+  // La foto cambia según el color elegido: 1er color = img, 2do color = img2
   function imgForColor(p, color) {
-    if (!p || !p.colors || !color) return p.img;
+    if (!p.colors || !color) return p.img;
     var idx = p.colors.indexOf(color);
     if (idx === 1 && p.img2) return p.img2;
     return p.img;
@@ -82,18 +63,13 @@
   function renderPdp() {
     $("#pdp-sizes").innerHTML = cur.sizes && cur.sizes.length ? '<p class="lbl">Talle</p><div class="opts">' + opts(cur.sizes, "size", selS) + "</div>" : "";
     $("#pdp-colors").innerHTML = cur.colors && cur.colors.length ? '<p class="lbl">Color</p><div class="opts">' + opts(cur.colors, "color", selC) + "</div>" : "";
-    // FIX COLORES: cada vez que cambia el color, cambia la foto
     var imgSrc = imgForColor(cur, selC);
-    var imgBox = $("#pdp-img");
-    if (imgBox && imgSrc) {
-      imgBox.innerHTML = '<img src="' + esc(imgSrc) + '" alt="' + esc(cur.name) + '">';
-    }
+    $("#pdp-img").innerHTML = imgSrc ? '<img src="' + esc(imgSrc) + '" alt="' + esc(cur.name) + '">' : "<span>" + esc(cur.name) + "</span>";
   }
   function openPdp(id) {
     cur = P[id];
     selS = cur.sizes && cur.sizes.length === 1 ? cur.sizes[0] : "";
     selC = cur.colors && cur.colors.length === 1 ? cur.colors[0] : "";
-    $("#pdp-img").innerHTML = cur.img ? '<img src="' + esc(cur.img) + '" alt="' + esc(cur.name) + '">' : "<span>" + esc(cur.name) + "</span>";
     $("#pdp-name").textContent = cur.name;
     $("#pdp-price").innerHTML = (cur.priceOld ? "<s>" + money(cur.priceOld) + "</s> " : "") + money(cur.price);
     $("#pdp-desc").textContent = cur.desc || "";
