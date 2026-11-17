@@ -18,17 +18,17 @@ window.SITE = {
   // Cada plato necesita un "id" único. "img" es opcional (ej: "img/hamburguesa.jpg")
   categories: [
     { name: "Hamburguesas", items: [
-      { id: "h1", name: "Clásica", desc: "Carne, queso cheddar, lechuga y tomate.", price: 9500 },
-      { id: "h2", name: "Doble bacon", desc: "Doble carne, bacon, cheddar y salsa de la casa.", price: 12500 },
-      { id: "h3", name: "Veggie", desc: "Medallón de garbanzos, rúcula y palta.", price: 9000 }
+      { id: "h1", name: "Clásica", desc: "Carne, queso cheddar, lechuga y tomate.", price: 9500, img: "clasica.jpg" },
+      { id: "h2", name: "Doble bacon", desc: "Doble carne, bacon, cheddar y salsa de la casa.", price: 12500, img: "doble.jpg" },
+      { id: "h3", name: "Veggie", desc: "Medallón de garbanzos, rúcula y palta.", price: 9000, img: "veggie.jpg" }
     ]},
     { name: "Pizzas", items: [
-      { id: "p1", name: "Muzzarella", desc: "Salsa de tomate y muzzarella.", price: 8500 },
-      { id: "p2", name: "Fugazzeta", desc: "Cebolla, muzzarella y aceitunas.", price: 10500 }
+      { id: "p1", name: "Muzzarella", desc: "Salsa de tomate y muzzarella.", price: 8500, img: "muzza.jpg" },
+      { id: "p2", name: "Fugazzeta", desc: "Cebolla, muzzarella y aceitunas.", price: 10500, img: "fugazzeta.jpg" }
     ]},
     { name: "Bebidas", items: [
-      { id: "b1", name: "Gaseosa 500 ml", desc: "", price: 2500 },
-      { id: "b2", name: "Cerveza artesanal", desc: "Lata 473 ml.", price: 3800 }
+      { id: "b1", name: "Gaseosa 500 ml", desc: "", price: 2500, img: "cola.jpg" },
+      { id: "b2", name: "Cerveza artesanal", desc: "Lata 473 ml.", price: 3800, img: "birra.jpg" }
     ]}
   ]
 };
