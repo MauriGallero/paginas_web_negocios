@@ -11,6 +11,7 @@ Hago páginas web para tus negocios que necesitan aparecer en Google y recibir p
 - **Restaurante:** https://maurigallero.github.io/paginas_web_negocios/Restaurante/
 - **Panadería:** https://maurigallero.github.io/paginas_web_negocios/panaderia/
 - **Barbería:** https://maurigallero.github.io/paginas_web_negocios/barberia/
+- - **Tienda de Parafernalia:** https://maurigallero.github.io/paginas_web_negocios/Parafernalia/
 - **Bandas:** https://maurigallero.github.io/paginas_web_negocios/bandas/
 - **Cafetería:** https://maurigallero.github.io/paginas_web_negocios/Menu_Cafeteria/
 
