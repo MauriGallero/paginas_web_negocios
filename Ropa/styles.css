@@ -40,7 +40,7 @@ s{color:var(--muted);font-weight:400}
 
 /* Inicio - FIX COLECCIÓN CORTADA */
 .hero{min-height:84vh;display:flex;align-items:flex-end;background:var(--ink) center/cover;color:#fff;padding:56px 0;overflow:hidden;width:100%;max-width:100%;box-sizing:border-box}
-.hero h1{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(48px,11vw,140px);line-height:.88;letter-spacing:-.04em;white-space:pre-line;overflow-wrap:break-word;word-break:break-word;max-width:100%}
+.hero h1{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(30px,11vw,140px);line-height:.9;letter-spacing:-.04em;white-space:pre-line;overflow-wrap:normal;word-break:normal;hyphens:none;max-width:100%}
 .hero p{margin:20px 0 28px;font-size:18px;max-width:38ch;color:#e8e8e8}
 
 /* Catálogo */
@@ -117,7 +117,7 @@ legend{font-size:14px;font-weight:500;margin-bottom:6px}
 @media (max-width:640px){
   .grid{grid-template-columns:1fr 1fr;gap:28px 12px}
   .hero{min-height:78vh;padding:40px 0}
-  .hero h1{font-size:clamp(52px,16vw,72px);line-height:.9}
+  .hero h1{font-size:clamp(30px,11vw,72px);line-height:.92}
   .pdp-grid{grid-template-columns:1fr}
   .pdp-img{aspect-ratio:1/1}
   .pdp-info{padding:24px 20px}
