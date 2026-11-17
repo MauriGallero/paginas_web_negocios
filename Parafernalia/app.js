@@ -11,6 +11,16 @@
   S.products.forEach(function (p) { P[p.id] = p; });
   var labels = function (p) { return p.variants ? Object.keys(p.variants) : []; };
 
+  /* Todas las fotos de un producto: portada + fotos de variantes + galería (sin repetir) */
+  var allImgs = function (p) {
+    var out = [];
+    var add = function (s) { if (s && out.indexOf(s) < 0) out.push(s); };
+    add(p.img);
+    if (p.varImgs) Object.keys(p.varImgs).forEach(function (k) { p.varImgs[k].forEach(add); });
+    (p.gallery || []).forEach(add);
+    return out;
+  };
+
   /* Aviso de mayores de 18 */
   var gate = $("#gate"), ok = false;
   try { ok = localStorage.getItem("age18") === "1"; } catch (e) {}
@@ -47,8 +57,9 @@
   S.products.forEach(function (p) { if (cats.indexOf(p.cat) < 0) cats.push(p.cat); });
 
   function card(p) {
-    var ph = p.img
-      ? '<img src="' + esc(p.img) + '" alt="" loading="lazy">' + (p.img2 ? '<img class="alt" src="' + esc(p.img2) + '" alt="" loading="lazy">' : "")
+    var im = allImgs(p);
+    var ph = im.length
+      ? '<img src="' + esc(im[0]) + '" alt="" loading="lazy">' + (im[1] ? '<img class="alt" src="' + esc(im[1]) + '" alt="" loading="lazy">' : "")
       : "<span>" + esc(p.name) + "</span>";
     return '<button type="button" class="card" data-open="' + esc(p.id) + '"><span class="ph">' + ph +
       (p.tag ? '<em class="tag">' + esc(p.tag) + "</em>" : "") + '</span><span class="name">' + esc(p.name) +
@@ -62,11 +73,18 @@
   }
 
   /* Ficha de producto */
-  var dlg = $("#pdp"), cur = null, sel = {};
-  function imgFor() {
-    var c = cur.variants && cur.variants.Color;
-    if (c && sel.Color && c.indexOf(sel.Color) === 1 && cur.img2) return cur.img2;
-    return cur.img;
+  var dlg = $("#pdp"), cur = null, sel = {}, shown = null;
+
+  /* Foto que corresponde a la opción elegida (si hay varImgs) */
+  function varImg() {
+    if (!cur.varImgs) return null;
+    var ls = Object.keys(cur.varImgs);
+    for (var i = 0; i < ls.length; i++) {
+      var opts = cur.variants && cur.variants[ls[i]];
+      var idx = opts ? opts.indexOf(sel[ls[i]]) : -1;
+      if (idx >= 0 && cur.varImgs[ls[i]][idx]) return cur.varImgs[ls[i]][idx];
+    }
+    return null;
   }
   function renderPdp() {
     $("#pdp-vars").innerHTML = labels(cur).map(function (l) {
@@ -75,12 +93,18 @@
           '" data-val="' + esc(v) + '" aria-pressed="' + (sel[l] === v) + '">' + esc(v) + "</button>";
       }).join("") + "</div>";
     }).join("");
-    var src = imgFor();
+    var src = shown || varImg() || cur.img;
     $("#pdp-img").innerHTML = src ? '<img src="' + esc(src) + '" alt="' + esc(cur.name) + '">' : "<span>" + esc(cur.name) + "</span>";
+    var im = allImgs(cur);
+    $("#pdp-thumbs").innerHTML = im.length > 1 ? im.map(function (s) {
+      return '<button type="button" class="thumb' + (s === src ? " on" : "") + '" data-img="' + esc(s) +
+        '" aria-label="Ver foto"><img src="' + esc(s) + '" alt=""></button>';
+    }).join("") : "";
   }
   function openPdp(id) {
     cur = P[id];
     sel = {};
+    shown = null;
     labels(cur).forEach(function (l) { if (cur.variants[l].length === 1) sel[l] = cur.variants[l][0]; });
     $("#pdp-name").textContent = cur.name;
     $("#pdp-price").innerHTML = (cur.priceOld ? "<s>" + money(cur.priceOld) + "</s> " : "") + money(cur.price);
@@ -146,12 +170,13 @@
 
   document.addEventListener("click", function (e) {
     if (e.target === dlg || e.target.closest("[data-close]")) { dlg.close(); return; }
-    var t = e.target.closest("[data-open],[data-cat],[data-var],[data-plus],[data-minus]");
+    var t = e.target.closest("[data-open],[data-cat],[data-var],[data-img],[data-plus],[data-minus]");
     if (!t) return;
     var d = t.dataset;
     if (d.open) { openPdp(d.open); }
     else if (d.cat) { current = d.cat; renderGrid(); }
-    else if (d.var !== undefined) { sel[d.var] = d.val; renderPdp(); }
+    else if (d.var !== undefined) { sel[d.var] = d.val; shown = null; renderPdp(); }
+    else if (d.img) { shown = d.img; renderPdp(); }
     else {
       var k = d.plus || d.minus;
       var l = cart.filter(function (x) { return x.k === k; })[0];
