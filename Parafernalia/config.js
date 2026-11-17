@@ -44,7 +44,7 @@ window.SITE = {
       img: "img/remeNgr.jpg", img2: "img/remeBlc.jpg", img3: "img/remes.jpg", desc: "Algodón, estampa en serigrafía.",
       variants: { "Talle": ["S", "M", "L", "XL"], "Color": ["Negro", "Blanco"] } },
     { id: "n2", cat: "Anime", name: "Figura coleccionable", price: 34000,
-      img: "img/figus.jpg", img2: "img/figuAnm.jpg", img3: "img/figuSph.jpg" desc: "PVC pintado a mano, 15 cm, con base." },
+      img: "img/figus.jpg", img2: "img/figuAnm.jpg", img3: "img/figuSph.jpg", desc: "PVC pintado a mano, 15 cm, con base." },
     { id: "n3", cat: "Anime", name: "Póster A3 x 3", price: 8500,
       img: "img/posters.jpg", img2: "img/posDtl.jpg", img3: "img/posAnm.jpg", img4: "img/posSph.jpg", desc: "Papel ilustración mate de 250 g." }
   ]
