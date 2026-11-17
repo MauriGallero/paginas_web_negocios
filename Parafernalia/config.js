@@ -24,9 +24,9 @@ window.SITE = {
   envio: 4500,
   envioGratisDesde: 70000,
 
-  // "variants" es opcional: cada clave es un menú de opciones (Talle, Color, Tamaño...).
-  // Si el 2º valor de "Color" tiene foto, poné su foto en img2.
-  // img = portada | varImgs = foto de cada opción (mismo orden que variants) | gallery = fotos de presentación
+  // img      = portada del producto
+  // varImgs  = foto de cada opción (mismo orden que en "variants")
+  // gallery  = fotos de presentación (no van atadas a ningún botón)
   products: [
     { id: "g1", cat: "Grow", name: "Carpa de cultivo", price: 85000, tag: "Nuevo",
       img: "img/carpas.jpg",
@@ -64,4 +64,3 @@ window.SITE = {
       desc: "Papel ilustración mate de 250 g." }
   ]
 };
-
