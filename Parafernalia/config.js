@@ -26,26 +26,42 @@ window.SITE = {
 
   // "variants" es opcional: cada clave es un menú de opciones (Talle, Color, Tamaño...).
   // Si el 2º valor de "Color" tiene foto, poné su foto en img2.
+  // img = portada | varImgs = foto de cada opción (mismo orden que variants) | gallery = fotos de presentación
   products: [
     { id: "g1", cat: "Grow", name: "Carpa de cultivo", price: 85000, tag: "Nuevo",
-      img: "img/carpas.jpg", img2: "img/carpa60.jpg", img3: "img/carpa80.jpg", img4: "img/carpa120.jpg", desc: "Tela resistente, interior reflectante y ventanas de control.",
+      img: "img/carpas.jpg",
+      varImgs: { "Tamaño": ["img/carpa60.jpg", "img/carpa80.jpg", "img/carpa120.jpg"] },
+      desc: "Tela resistente, interior reflectante y ventanas de control.",
       variants: { "Tamaño": ["60x60", "80x80", "120x120"] } },
     { id: "g2", cat: "Grow", name: "Maceta textil", price: 6500,
-      img: "img/masetas.jpg", img2: "img/mase5.jpg", img3: "img/mase11.jpg", img4: "img/mase20.jpg",  desc: "Mejor drenaje y aireación para las raíces.",
+      img: "img/masetas.jpg",
+      varImgs: { "Capacidad": ["img/mase5.jpg", "img/mase11.jpg", "img/mase20.jpg"] },
+      desc: "Mejor drenaje y aireación para las raíces.",
       variants: { "Capacidad": ["5 L", "11 L", "20 L"] } },
     { id: "g3", cat: "Grow", name: "Sustrato premium 50 L", price: 14500,
       img: "img/sust.jpg", desc: "Mezcla aireada y lista para usar." },
     { id: "a1", cat: "Accesorios", name: "Moledor metálico", price: 9800,
-      img: "img/pikaNgr.jpg", img2: "img/pikaVlt.jpg", img3: "img/pikas.jpg", desc: "Cuatro partes, aluminio anodizado.",
+      img: "img/pikaNgr.jpg",
+      varImgs: { "Color": ["img/pikaNgr.jpg", "img/pikaVlt.jpg"] },
+      gallery: ["img/pikas.jpg"],
+      desc: "Cuatro partes, aluminio anodizado.",
       variants: { "Color": ["Negro", "Violeta"] } },
     { id: "a2", cat: "Accesorios", name: "Bandeja para armar", price: 7200, priceOld: 8500,
       img: "img/bande.jpg", desc: "Diseño gamer, borde antideslizante." },
     { id: "n1", cat: "Anime", name: "Remera anime oversize", price: 21000, tag: "Nuevo",
-      img: "img/remeNgr.jpg", img2: "img/remeBlc.jpg", img3: "img/remes.jpg", desc: "Algodón, estampa en serigrafía.",
+      img: "img/remeNgr.jpg",
+      varImgs: { "Color": ["img/remeNgr.jpg", "img/remeBlc.jpg"] },
+      gallery: ["img/remes.jpg"],
+      desc: "Algodón, estampa en serigrafía.",
       variants: { "Talle": ["S", "M", "L", "XL"], "Color": ["Negro", "Blanco"] } },
     { id: "n2", cat: "Anime", name: "Figura coleccionable", price: 34000,
-      img: "img/figus.jpg", img2: "img/figuAnm.jpg", img3: "img/figuSph.jpg", desc: "PVC pintado a mano, 15 cm, con base." },
+      img: "img/figus.jpg",
+      gallery: ["img/figuAnm.jpg", "img/figuSph.jpg"],
+      desc: "PVC pintado a mano, 15 cm, con base." },
     { id: "n3", cat: "Anime", name: "Póster A3 x 3", price: 8500,
-      img: "img/posters.jpg", img2: "img/posDtl.jpg", img3: "img/posAnm.jpg", img4: "img/posSph.jpg", desc: "Papel ilustración mate de 250 g." }
+      img: "img/posters.jpg",
+      gallery: ["img/posDtl.jpg", "img/posAnm.jpg", "img/posSph.jpg"],
+      desc: "Papel ilustración mate de 250 g." }
   ]
 };
+
