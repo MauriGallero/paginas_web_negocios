@@ -47,7 +47,7 @@ window.SITE = {
       desc: "Cuatro partes, aluminio anodizado.",
       variants: { "Color": ["Negro", "Violeta"] } },
     { id: "a2", cat: "Accesorios", name: "Bandeja para armar", price: 7200, priceOld: 8500,
-      img: "img/bande.jpg", desc: "Diseño gamer, borde antideslizante." },
+      img: "img/bandes.jpg", desc: "Diseño gamer, borde antideslizante." },
     { id: "n1", cat: "Anime", name: "Remera anime oversize", price: 21000, tag: "Nuevo",
       img: "img/remeNgr.jpg",
       varImgs: { "Color": ["img/remeNgr.jpg", "img/remeBlc.jpg"] },
